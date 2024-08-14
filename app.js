@@ -40,7 +40,7 @@ async function storeHashOnEthereum(ipfsHash) {
     try {
         const provider = new ethers.providers.InfuraProvider('mainnet', 'ca6b382296cc487d97667369a5ae0b38');
         const signer = provider.getSigner();
-        const contract = new ethers.Contract('YOUR_CONTRACT_ADDRESS', [
+        const contract = new ethers.Contract('0xf8e81D47203A594245E36C48e151709F0C19fBe8', [
             // ABI of your contract here
         ], signer);
 
