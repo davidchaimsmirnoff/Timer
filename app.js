@@ -41,7 +41,53 @@ async function storeHashOnEthereum(ipfsHash) {
         const provider = new ethers.providers.InfuraProvider('mainnet', 'ca6b382296cc487d97667369a5ae0b38');
         const signer = provider.getSigner();
         const contract = new ethers.Contract('0xf8e81D47203A594245E36C48e151709F0C19fBe8', [
-            // ABI of your contract here
+            
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_ipfsHash",
+				"type": "string"
+			}
+		],
+		"name": "storeHash",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getHash",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "ipfsHashes",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
         ], signer);
 
         const tx = await contract.storeHash(ipfsHash);
