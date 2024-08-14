@@ -1,0 +1,8 @@
+{
+    "name": "decentralized-timer-app",
+    "version": "1.0.0",
+    "dependencies": {
+        "ipfs-http-client": "^51.0.1",
+        "ethers": "^5.5.1"
+    }
+}
