@@ -22,3 +22,15 @@ async function uploadToIPFS(data) {
     console.log('IPFS Hash:', result.path);
     // Optionally store the hash on Ethereum
 }
+
+async function uploadToIPFS(data) {
+    try {
+        const ipfs = IPFS.create({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' });
+        const result = await ipfs.add(data);
+        console.log('IPFS Hash:', result.path);
+        // Optionally store the hash on Ethereum
+    } catch (error) {
+        console.error('IPFS upload failed:', error);
+    }
+}
+
