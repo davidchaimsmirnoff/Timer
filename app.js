@@ -38,7 +38,7 @@ async function uploadToIPFS(data) {
 // Optional: Store the IPFS hash on Ethereum
 async function storeHashOnEthereum(ipfsHash) {
     try {
-        const provider = new ethers.providers.InfuraProvider('mainnet', 'YOUR_INFURA_PROJECT_ID');
+        const provider = new ethers.providers.InfuraProvider('mainnet', 'ca6b382296cc487d97667369a5ae0b38');
         const signer = provider.getSigner();
         const contract = new ethers.Contract('YOUR_CONTRACT_ADDRESS', [
             // ABI of your contract here
